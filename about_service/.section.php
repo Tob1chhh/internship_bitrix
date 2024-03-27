@@ -1,6 +1,6 @@
 <?
 $sSectionName = "О сервисе";
-$arDirProperties = Array(
+$arDirProperties = array(
    "description" => "Информация о сервисе",
    "keywords" => "вакансии, контакты, новости, агенты",
    "title" => "О сервисе"

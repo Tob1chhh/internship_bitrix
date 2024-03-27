@@ -80,6 +80,12 @@ $APPLICATION->SetTitle("Объявления");
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"COMPONENT_TEMPLATE" => ".default",
+		"GROUP_PERMISSIONS" => array(
+			0 => "1",
+			1 => "6",
+			2 => "7",
+			3 => "8",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
