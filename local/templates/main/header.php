@@ -41,30 +41,43 @@ $GLOBALS['arrFilter'] = Array('IBLOCK_ID' => 5, 'PROPERTY_CHECK_PRIORITY_VALUE' 
 
   <div class="site-wrap">
 
-    <div class="site-mobile-menu">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div> <!-- .site-mobile-menu -->
+      <div class="site-mobile-menu">
+          <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+          </div>
+          <div class="site-mobile-menu-body"></div>
+      </div> <!-- .site-mobile-menu -->
 
-    <div class="border-bottom bg-white top-bar">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-6 col-md-6">
-            <p class="mb-0">
-            <?$APPLICATION->IncludeComponent(
-                "bitrix:main.include",
-                "",
-                Array(
-                  "AREA_FILE_SHOW" => "file",
-                  "AREA_FILE_SUFFIX" => "inc",
-                  "EDIT_TEMPLATE" => "",
-                  "PATH" => "/include/contact_phone.php"
-                )
-              );?>
+      <div class="border-bottom bg-white top-bar">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-6 col-md-6">
+              <p class="mb-0">
+              <?$APPLICATION->IncludeComponent(
+                  "bitrix:main.include",
+                  "",
+                  Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "AREA_FILE_SUFFIX" => "inc",
+                    "EDIT_TEMPLATE" => "",
+                    "PATH" => "/include/contact_phone.php"
+                  )
+                );?>
+                <?$APPLICATION->IncludeComponent(
+                  "bitrix:main.include",
+                  "",
+                  Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "AREA_FILE_SUFFIX" => "inc",
+                    "EDIT_TEMPLATE" => "",
+                    "PATH" => "/include/contact_mail.php"
+                  )
+                );?>
+              </p>
+            </div>
+            <div class="col-6 col-md-6 text-right">
               <?$APPLICATION->IncludeComponent(
                 "bitrix:main.include",
                 "",
@@ -72,63 +85,61 @@ $GLOBALS['arrFilter'] = Array('IBLOCK_ID' => 5, 'PROPERTY_CHECK_PRIORITY_VALUE' 
                   "AREA_FILE_SHOW" => "file",
                   "AREA_FILE_SUFFIX" => "inc",
                   "EDIT_TEMPLATE" => "",
-                  "PATH" => "/include/contact_mail.php"
+                  "PATH" => "/include/social_nets.php"
                 )
               );?>
-            </p>
+            </div>
           </div>
-          <div class="col-6 col-md-6 text-right">
-            <?$APPLICATION->IncludeComponent(
-              "bitrix:main.include",
-              "",
-              Array(
-                "AREA_FILE_SHOW" => "file",
-                "AREA_FILE_SUFFIX" => "inc",
-                "EDIT_TEMPLATE" => "",
-                "PATH" => "/include/social_nets.php"
-              )
-            );?>
+        </div>
+
+      </div>
+      <div class="site-navbar">
+        <div class="container py-1">
+          <div class="row align-items-center">
+            <div class="col-8 col-md-8 col-lg-4">
+              <h1 class="">
+              <?$APPLICATION->IncludeComponent(
+                  "bitrix:main.include",
+                  "",
+                  Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "AREA_FILE_SUFFIX" => "inc",
+                    "EDIT_TEMPLATE" => "",
+                    "PATH" => "/include/name_logo.php"
+                  )
+                );?>
+              </h1>
+            </div>
+            <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
+                  "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                      "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+                      "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                      "MAX_LEVEL" => "2",	// Уровень вложенности меню
+                      "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                      "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                      "MENU_CACHE_TYPE" => "A",	// Тип кеширования
+                      "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+                      "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+                      "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                      "COMPONENT_TEMPLATE" => "horizontal_multilevel"
+                  ),
+                  false
+              );?>
+
           </div>
         </div>
       </div>
-
-    </div>
-    <div class="site-navbar">
-      <div class="container py-1">
-        <div class="row align-items-center">
-          <div class="col-8 col-md-8 col-lg-4">
-            <h1 class="">
-            <?$APPLICATION->IncludeComponent(
-                "bitrix:main.include",
-                "",
-                Array(
-                  "AREA_FILE_SHOW" => "file",
-                  "AREA_FILE_SUFFIX" => "inc",
-                  "EDIT_TEMPLATE" => "",
-                  "PATH" => "/include/name_logo.php"
-                )
-              );?>
-            </h1>
-          </div>
-          <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
-                "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-                    "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
-                    "DELAY" => "N",	// Откладывать выполнение шаблона меню
-                    "MAX_LEVEL" => "2",	// Уровень вложенности меню
-                    "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
-                    "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-                    "MENU_CACHE_TYPE" => "A",	// Тип кеширования
-                    "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-                    "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-                    "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-                    "COMPONENT_TEMPLATE" => "horizontal_multilevel"
-                ),
-                false
-            );?>
-
-        </div>
-      </div>
-    </div>
   </div>
+  <?$APPLICATION->IncludeComponent(
+    "bitrix:breadcrumb", 
+    "template_breadcrumbs", 
+    array(
+      "PATH" => "",
+      "SITE_ID" => "s1",
+      "START_FROM" => "0",
+      "COMPONENT_TEMPLATE" => "template_breadcrumbs"
+    ),
+    false
+  );?>
 
   
