@@ -3,6 +3,8 @@
 IncludeTemplateLangFile(__FILE__);
 
 $GLOBALS['arrFilter'] = Array('IBLOCK_ID' => 5, 'PROPERTY_CHECK_PRIORITY_VALUE' => 'Да');
+$userId = $GLOBALS['USER']->GetID();
+$GLOBALS['filterUsers'] = Array('CREATED_BY' => $userId);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -130,6 +132,7 @@ $GLOBALS['arrFilter'] = Array('IBLOCK_ID' => 5, 'PROPERTY_CHECK_PRIORITY_VALUE' 
         </div>
       </div>
   </div>
+  <?if ($APPLICATION->GetCurPage() != '/') {?>
   <?$APPLICATION->IncludeComponent(
     "bitrix:breadcrumb", 
     "template_breadcrumbs", 
@@ -140,6 +143,6 @@ $GLOBALS['arrFilter'] = Array('IBLOCK_ID' => 5, 'PROPERTY_CHECK_PRIORITY_VALUE' 
       "COMPONENT_TEMPLATE" => "template_breadcrumbs"
     ),
     false
-  );?>
+  );}?>
 
   

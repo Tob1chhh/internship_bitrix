@@ -67,7 +67,8 @@ $APPLICATION->SetTitle("Объявления");
 			1 => "PREVIEW_TEXT",
 			2 => "PREVIEW_PICTURE",
 			3 => "DATE_ACTIVE_FROM",
-			4 => "",
+			4 => "CREATED_BY",
+			5 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
 			0 => "BATHS",
