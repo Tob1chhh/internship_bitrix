@@ -1,16 +1,22 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Контакты");
-?>
-<br><h1>Контактная информация.</h1><br>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:main.include", 
-	".default", 
+?><?$APPLICATION->IncludeComponent(
+	"bitrix:main.feedback", 
+	"template_feedback", 
 	array(
-		"COMPONENT_TEMPLATE" => ".default",
-		"AREA_FILE_SHOW" => "file",
-		"PATH" => "index_inc.php",
-		"EDIT_TEMPLATE" => ""
+		"EMAIL_TO" => "draveone73@gmail.com",
+		"EVENT_MESSAGE_ID" => array(
+		),
+		"OK_TEXT" => "Спасибо, ваше сообщение принято.",
+		"REQUIRED_FIELDS" => array(
+			0 => "NAME",
+			1 => "EMAIL",
+			2 => "MESSAGE",
+		),
+		"USE_CAPTCHA" => "N",
+		"COMPONENT_TEMPLATE" => "template_feedback"
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><br>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
