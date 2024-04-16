@@ -133,16 +133,13 @@ $GLOBALS['filterUsers'] = Array('CREATED_BY' => $userId);
       </div>
   </div>
   <?if ($APPLICATION->GetCurPage() != '/') {?>
-  <?$APPLICATION->IncludeComponent(
-    "bitrix:breadcrumb", 
-    "template_breadcrumbs", 
-    array(
-      "PATH" => "",
-      "SITE_ID" => "s1",
-      "START_FROM" => "0",
-      "COMPONENT_TEMPLATE" => "template_breadcrumbs"
-    ),
-    false
-  );}?>
+  <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "template_breadcrumbs", Array(
+	"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+		"SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+		"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+		"COMPONENT_TEMPLATE" => "template_breadcrumbs"
+	),
+	false
+);}?>
 
   
