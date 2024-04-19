@@ -8,7 +8,7 @@ $APPLICATION->SetTitle("Агенты недвижимости");
 	"mcart:agents.list", 
 	".default", 
 	array(
-		"AGENTS_COUNT" => "3",
+		"AGENTS_COUNT" => "2",
 		"CACHE_TIME" => "3600000",
 		"CACHE_TYPE" => "A",
 		"COMPONENT_TEMPLATE" => ".default",

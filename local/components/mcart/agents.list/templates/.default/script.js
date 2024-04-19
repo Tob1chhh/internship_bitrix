@@ -9,11 +9,6 @@ BX.ready(function() {
     stars.forEach(star => {
         BX.bind(star, "click", clickStar);
     });
-    stars.forEach(star => {
-        star.addEventListener('click', () => {
-            location.reload();
-        });
-    });
 });
 function clickStar(event) {
     event.preventDefault();
@@ -42,7 +37,7 @@ function clickStar(event) {
                 BX.proxy((response) => {
                     console.log(response); // консоле можно будет увидеть ответ от бэка, для разработки в конечном коде лучше убрать
                     let data = response.data;
-                    if (data['action'] == 'success') {
+                    if (data[0]['action'] == 'success') {
                         // Отобразить пользоватиелю, что агент добавлен в избраное (желтая звездочка, есть в верстке)
                         if (this.getAttribute('class') == 'star') {
                             this.setAttribute('class', 'star active');
